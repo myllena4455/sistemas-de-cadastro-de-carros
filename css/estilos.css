@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
   background-color: #151416;
@@ -19,13 +26,12 @@ h1 {
 
 .container {
   background:#4d0b84;
-   color: white;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
   padding: 30px; 
   margin-top: 30px;
   width: 90%; 
-  max-width: 400px; 
+  max-width: 600px; 
 }
 
 
@@ -50,15 +56,14 @@ form input {
 form button {
   flex: 1 1 100%; 
   padding: 12px; 
-  margin: 30px;
+  margin: px;
   background: #8d05fc;
   color: white; 
   border: none; 
   border-radius: 8px;
   cursor: pointer; 
-  font-size: 1; 
+  font-size: 1em; 
   transition: background 0.3s ease; 
-   
 }
 
 
@@ -90,3 +95,376 @@ th {
   color: #777; 
   padding: 15px; 
 }
+
+
+body::before {
+    content: '';
+    position: absolute;
+    top: -50px; /* Expande um pouco para fora para garantir o blur nas bordas */
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
+    background: linear-gradient(135deg, #330066 0%, #000000 50%, #330066 100%); /* Um degrade mais vibrante para o blur */
+    filter: blur(40px); /* Aplica um blur intenso */
+    z-index: -1; /* Manda para trás do conteúdo */
+    /* Garante que o fundo borrado tenha altura e largura */
+    width: calc(100% + 100px); 
+    height: calc(100% + 100px);
+}
+
+
+/* A Caixa de Login com efeito Glassmorphism */
+.login-box {
+    /* CORREÇÃO CRÍTICA: Garantir o fundo transparente para o backdrop-filter */
+    background: rgba(255, 255, 255, 0.05); /* Um fundo MUITO transparente */
+    
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda mais sutil */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4); /* Sombra mais visível */
+    
+    /* OS FILTROS DE VIDRO - VERIFIQUE SE SEU NAVEGADOR SUPORTA */
+    backdrop-filter: blur(15px); /* Aumentei um pouco o blur */
+    -webkit-backdrop-filter: blur(15px); /* ESSENCIAL para navegadores baseados em Webkit (Chrome, Safari) */
+    
+    padding: 40px;
+    width: 90%;
+    max-width: 380px; 
+    text-align: center;
+    color: white; /* Texto principal branco para contraste */
+}
+
+.login-title {
+    color: white; 
+    margin-bottom: 30px;
+    font-size: 1.8em;
+    font-weight: 600;
+    text-align: left; 
+    letter-spacing: 2px;
+}
+
+/* Estrutura dos inputs */
+.input-group {
+    margin-bottom: 15px; 
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    /* Fundo dos inputs mais transparente para o efeito de vidro */
+    background: rgba(255, 255, 255, 0.1); 
+    border: none; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Linha inferior mais sutil */
+    border-radius: 5px;
+    color: white;
+    font-size: 1em;
+    transition: background 0.3s ease, border-bottom-color 0.3s ease;
+    text-align: left; 
+}
+
+/* Placeholder */
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.6); /* Cor do placeholder */
+}
+
+/* Efeito de foco (quando o campo está selecionado) */
+.input-group input:focus {
+    background: rgba(255, 255, 255, 0.2); /* Fundo um pouco mais claro no foco */
+    border-bottom-color: purple; 
+    outline: none;
+}
+
+/* Checkbox "Keep me logged in" */
+.checkbox-group {
+    display: flex; 
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9em;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 8px;
+    appearance: none; 
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Borda mais transparente */
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.05); /* Fundo mais transparente */
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+    background-color: #E7008A; /* Roxo ou Rosa vibrante quando checado */
+    border-color: #E7008A;
+}
+
+.checkbox-group input[type="checkbox"]:checked::after {
+    content: '✓'; 
+    color: white;
+    font-size: 12px;
+    line-height: 1;
+}
+
+/* Botão de Login */
+.login-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px; 
+    background-color: #E7008A; /* Roxo/Rosa vibrante para o botão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #FF00A6; /* Um pouco mais claro no hover */
+    box-shadow: 0 0 15px rgba(231, 0, 138, 0.6); /* Sombra para o botão no hover */
+}
+
+/* Rodapé (links adicionais) */
+.login-footer {
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7); 
+}
+
+.login-footer .footer-link {
+    color: white; 
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+    transition: color 0.3s;
+}
+
+.login-footer .footer-link:hover {
+    color: #E7008A; 
+    text-decoration: underline;
+}
+
+/* Variáveis para fácil manutenção de cores */
+:root {
+    --cor-principal: #007bff; /* Azul */
+    --cor-secundaria: #6c757d; /* Cinza */
+    --cor-fundo: #f8f9fa; /* Fundo claro */
+    --cor-card: #ffffff; /* Fundo do formulário */
+    --cor-texto: #333333;
+}
+
+
+a {
+    color: var(--cor-principal);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* -------------------- Container Principal -------------------- */
+.cadastro-container {
+    background-color: var(--cor-card);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Tamanho ideal para formulários */
+    text-align: center;
+}
+
+/* -------------------- Cabeçalho -------------------- */
+header h1 {
+    font-size: 2em;
+    margin-bottom: 8px;
+    color: var(--cor-principal);
+}
+
+header p {
+    margin-bottom: 30px;
+    color: var(--cor-secundaria);
+}
+
+/* -------------------- Formulário e Campos -------------------- */
+.cadastro-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os grupos de input */
+    text-align: left;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--cor-principal);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Ícone de mostrar senha */
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 60%; /* Ajuste a posição vertical */
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--cor-secundaria);
+}
+
+/* -------------------- Divisor (ou use seu e-mail) -------------------- */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: var(--cor-secundaria);
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.divider:not(:empty)::before {
+    margin-right: 15px;
+}
+
+.divider:not(:empty)::after {
+    margin-left: 15px;
+}
+
+/* -------------------- Login Social -------------------- */
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-social {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    background-color: var(--cor-card);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-social:hover {
+    background-color: #f1f1f1;
+    border-color: #adb5bd;
+}
+
+.btn-social img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* -------------------- Termos e Checkbox -------------------- */
+.termos {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.termos input[type="checkbox"] {
+    margin-right: 10px;
+    /* Estilização customizada de checkbox (opcional, mas profissional) */
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    top: -1px;
+}
+
+.termos input[type="checkbox"]:checked {
+    background-color: var(--cor-principal);
+    border-color: var(--cor-principal);
+}
+
+.termos input[type="checkbox"]:checked::after {
+    content: '✓';
+    color: var(--cor-card);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+}
+
+/* -------------------- Botão Principal -------------------- */
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--cor-principal);
+    color: var(--cor-card);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Um tom de azul mais escuro */
+}
+
+/* -------------------- Rodapé -------------------- */
+footer {
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+/* -------------------- Responsividade (Opcional) -------------------- */
+@media (max-width: 480px) {
+    .cadastro-container {
+        padding: 30px 20px;
+        max-width: 100%;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+}
+
