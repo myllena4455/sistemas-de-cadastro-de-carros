@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Crie sua Conta</title>
+  <link rel="stylesheet" href="texte .css"> <!-- usa o mesmo CSS que você já criou -->
+</head>
+<body>
+  <h1>Crie sua Conta</h1>
+
+  <div class="container">
+    <form id="signupForm">
+      <input type="email" name="email" placeholder="seu email@exemplo.com" required>
+      <input type="password" name="senha" placeholder="Min. 8 caracteres" required>
+      <input type="password" name="confirmarSenha" placeholder="Digite a senha novamente" required>
+
+      <label style="flex: 1 1 100%; font-size: 0.9em;">
+        <input type="checkbox" required>
+        Eu concordo com os <a href="#" style="color: #BC13FE;">Termos de Uso</a> e a <a href="#" style="color: #BC13FE;">Política de privacidade</a>.
+      </label>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
+
+  <div class="container" style="text-align: center; margin-top: 20px;">
+    <p>Já tem uma conta? <a href="#" style="color: #BC13FE;">Faça Login</a></p>
+  </div>
+</body>
+</html>

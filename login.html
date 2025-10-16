@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="css/estilos.css"> <!-- usa o mesmo CSS do cadastro de carros -->
+</head>
+<body>
+  <h1>Login</h1>
+
+  <div class="container">
+    <form class="login-form" action="#" method="POST">
+      <input type="email" id="email" name="email" placeholder="seu email@exemplo.com" required>
+      <input type="password" id="senha" name="senha" placeholder="Min. 8 caracteres" required>
+
+      <label style="flex: 1 1 100%; font-size: 0.9em;">
+        <input type="checkbox" id="keep-logged-in">
+        lembra-me
+      </label>
+
+      <button type="submit">Login</button>
+
+      <div style="flex: 1 1 100%; text-align: center; margin-top: 10px;">
+        <p>Esqueceu a senha? <a href="#" style="color: #BC13FE;">Clique aqui</a></p>
+        <p>Não tem uma conta? <a href="cadastro.html" style="color: #BC13FE;">Cadastre-se aqui</a></p>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

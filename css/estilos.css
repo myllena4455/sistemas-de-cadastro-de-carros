@@ -19,12 +19,13 @@ h1 {
 
 .container {
   background:#4d0b84;
+   color: white;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
   padding: 30px; 
   margin-top: 30px;
   width: 90%; 
-  max-width: 600px; 
+  max-width: 400px; 
 }
 
 
@@ -49,14 +50,15 @@ form input {
 form button {
   flex: 1 1 100%; 
   padding: 12px; 
-  margin: px;
+  margin: 30px;
   background: #8d05fc;
   color: white; 
   border: none; 
   border-radius: 8px;
   cursor: pointer; 
-  font-size: 1em; 
+  font-size: 1; 
   transition: background 0.3s ease; 
+   
 }
 
 
